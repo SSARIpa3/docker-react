@@ -1,0 +1,9 @@
+sudo: required
+services:
+  -docker
+
+  before-install:
+    - docker build -t swati0491/docker-practice -f Dockerfile.dev .
+
+  script:
+    - docker run swati0491/docker-practice npm run test -- --coverage
